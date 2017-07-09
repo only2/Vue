@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+        <div id="app">
+            用户名:<input type="text" v-model="name"/>
+            密码:<input type="text" v-model="password"/>
+            <button @click="add">add</button>
+            <ul>
+                <li v-for="(obj,index) in arr">
+                    <!--v-html="obj.name+','+obj.password+'<button>del</button>'"-->
+                    {{obj.name}},{{obj.password}}
+                    <button @click="del"> del </button>
+                </li>
+            </ul>
+        </div>
+
+        <script src="vue.js"></script>
+        <script>
+            var Vue = new Vue({
+                el:"#app",
+                data:{
+                    name:"",
+                    password:"",
+                    arr:[]
+                },
+                methods:{
+                    add:function(){
+                        this.arr.push({name:this.name,password:this.password});
+                        this.name = "";
+                        this.password = "";
+                    },
+                    del:function(index){
+                        this.arr.splice(index,1);
+                    }
+
+                }
+            })
+        </script>
+</body>
+</html>

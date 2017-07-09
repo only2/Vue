@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .red{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="msg" @keyup="filter"><button @click="add">add</button>
+        <ul>
+            <li v-for ="item in showItems" :class="{red:item.isRed}" @click="item.isRed=!item.isRed">{{item.val}}</li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var Vue = new Vue({
+            el:"#app",
+            data:{
+                msg:'',
+                items:[],
+                showItems:[],
+                isRed:false
+            },
+            methods:{
+                add:function(){
+                  this.items.push({val:this.msg,isRed:false});
+                  this.msg = "";
+                  this.items.sort(function(a,b){
+                      return b.val - a.val;
+                  });
+                    this.showItems = this.items;
+              },
+                filter:function(){
+                    var that = this;
+//                    var arr = this.items.filter(function(val){
+//                        return val.indexOf(that.msg) > -1;
+//                    });
+                    var arr = this.items.filter(function(obj){
+                        return obj.val.indexOf(that.msg) > -1;
+                    });
+                    this.showItems = arr;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

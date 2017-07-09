@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <!--<div :style="{color:colorStyle}">66666</div>-->
+        <!--<div :style="styleObj">66666</div>-->
+        <div :style="[styleA,styleB]">66666</div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var Vue = new Vue({
+            el:"#app",
+            data:{
+//              colorStyle:'red'
+//              styleObj:{
+//                    color:'red'
+//                }
+                styleA:{
+                    color:'red',
+                    background:"gray"
+                },
+                styleB:{
+                   'font-size':"40px"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

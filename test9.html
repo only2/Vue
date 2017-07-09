@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <div>
+        <div v-if="show">
+            <template v-if="show">
+                <h>546</h>
+                <p>3546</p>
+            </template>
+            <h3>5444</h3>
+        </div>
+        <!--消失的话在DOM中也消失-->
+        <div v-else>
+            <p>66666</p>
+        </div>
+        <div v-show="show">
+            <p>3333</p>
+        </div>
+        <!--消失但是还存在DOM结构中-->
+    </div>
+</div>
+<script src="vue.js"></script>
+<script>
+    var Vue = new Vue({
+        el:"#app",
+        data:{
+           show:false
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for = "val in arr">{{val}}</li>
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+    var Vue = new Vue({
+        el:"#app",
+        data:{
+            arr:[1,2,3,4,5]
+        }
+    });
+
+</script>
+<!--arr.pop()从数组中拿出最后一个元素并且删除该元素 返回改变后的数组。-->
+<!--arr.unshift()从数组头中插入一个元素。 返回改变后的数组-->
+<!--arr.shift() 从数组中取出第一个元素 返回该元素的值-->
+<!--在Vue中，利用数组中的元素的索引去改变元素的值会导致数据绑定无法正常使用-->
+<!--利用 Vue.set(Vue.arr,索引，值)-->
+<!--arr.splice(开始进行替换元素的索引，要替换几个元素，替换元素的值) 3个参数是替换-->
+<!--arr.splice(开始删除元素的索引，要删除元素的数量) 两个参数是删除-->
+arr.splice()一个参数 输入数组长度 自动从前往后截取长度
+
+</body>
+</html>
