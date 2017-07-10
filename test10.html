@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+        <div id="app">
+            <input type="text"/>
+            <input type="radio" name="sex" v-model="sex" value="男"/>男
+            <input type="radio" name="sex" v-model="sex" value="女"/>女
+            <input type="checkbox" v-model="aa" value="足球"/>足球
+            <input type="checkbox" v-model="aa" value="篮球"/>蓝球
+            <input type="checkbox" v-model="aa" value="排球"/>排球
+            <select name="" id="" v-model="selected">
+                <option value="111">111</option>
+                <option value="222">222</option>
+                <option value="333">333</option>
+            </select>
+        </div>
+        <script src="vue.js"></script>
+        <script>
+            var Vue = new Vue({
+                el:"#app",
+                data:{
+                    text:'',
+                    sex:'男',
+                    aa:['足球'],
+                    selected:'111'
+                }
+            })
+        </script>
+</body>
+</html>
